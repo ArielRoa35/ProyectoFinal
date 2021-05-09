@@ -27,18 +27,91 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        btnVender = new javax.swing.JButton();
+        btnComprar = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
+        btnFactura = new javax.swing.JButton();
+        btnDevolucion = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnCatalogo = new javax.swing.JButton();
+        pnlContent = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 500));
+
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new java.awt.GridLayout(0, 1));
+
+        btnVender.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnVender.setText("Vender");
+        btnVender.setEnabled(false);
+        btnVender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnVender);
+
+        btnComprar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnComprar.setText("Comprar");
+        btnComprar.setEnabled(false);
+        btnComprar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnComprar);
+
+        btnInventario.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnInventario.setText("Inventario");
+        btnInventario.setEnabled(false);
+        btnInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnInventario);
+
+        btnFactura.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnFactura.setText("Facturas");
+        btnFactura.setEnabled(false);
+        btnFactura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnFactura);
+
+        btnDevolucion.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnDevolucion.setText("Devolución");
+        btnDevolucion.setEnabled(false);
+        btnDevolucion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnDevolucion);
+
+        btnRegistrar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnRegistrar.setText("Registrar proveedor");
+        btnRegistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnRegistrar);
+
+        btnCatalogo.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnCatalogo.setText("Catálogo");
+        btnCatalogo.setEnabled(false);
+        btnCatalogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(btnCatalogo);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_START);
+
+        pnlContent.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout pnlContentLayout = new javax.swing.GroupLayout(pnlContent);
+        pnlContent.setLayout(pnlContentLayout);
+        pnlContentLayout.setHorizontalGroup(
+            pnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 379, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        pnlContentLayout.setVerticalGroup(
+            pnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jLabel1.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Pulperia \"Doña Ignacia\" - Todo lo que quieras al alcance de tu barrio.");
+        jPanel3.add(jLabel1);
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.NORTH);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +152,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCatalogo;
+    private javax.swing.JButton btnComprar;
+    private javax.swing.JButton btnDevolucion;
+    private javax.swing.JButton btnFactura;
+    private javax.swing.JButton btnInventario;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnVender;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }
