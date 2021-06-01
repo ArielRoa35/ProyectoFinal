@@ -5,12 +5,19 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.frame;
 
+import java.awt.BorderLayout;
+import javax.swing.JComponent;
+import ni.edu.uni.programacion2.proyectofinal.controllers.IngProdController;
+import ni.edu.uni.programacion2.proyectofinal.panels.IngreProductos;
+
 /**
  *
  * @author LENOVO 17
  */
 public class Pulperia extends javax.swing.JFrame {
 
+    private IngreProductos ingresarProductos;
+    private IngProdController controllerP;
     /**
      * Creates new form Pulperia
      */
@@ -27,30 +34,50 @@ public class Pulperia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        pnlContent = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mniAgregarPro = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlContent.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 80, -1));
+        jMenu1.setText("File");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarProd.png"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 80, -1));
+        mniAgregarPro.setText("Agregar Producto");
+        mniAgregarPro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniAgregarProActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mniAgregarPro);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoFrame.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 350));
+        jMenuBar1.add(jMenu1);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mniAgregarProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniAgregarProActionPerformed
+        // TODO add your handling code here:
+        if (ingresarProductos == null) {
+            ingresarProductos = new IngreProductos();
+            controllerP = new IngProdController(ingresarProductos);
+        }
+
+        addComponent(ingresarProductos);
+    }//GEN-LAST:event_mniAgregarProActionPerformed
+
+    private void addComponent(JComponent component) {
+        pnlContent.removeAll();
+        pnlContent.add(component, BorderLayout.CENTER);
+        
+        validate();
+        repaint();
+    }
     /**
      * @param args the command line arguments
      */
@@ -87,9 +114,9 @@ public class Pulperia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem mniAgregarPro;
+    private javax.swing.JPanel pnlContent;
     // End of variables declaration//GEN-END:variables
 }
