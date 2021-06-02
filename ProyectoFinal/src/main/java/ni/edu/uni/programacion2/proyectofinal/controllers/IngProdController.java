@@ -5,6 +5,7 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.controllers;
 
+import com.google.gson.Gson;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -14,23 +15,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import ni.edu.uni.programacion2.proyectofinal.backend.dao.implementation.JsonProdDaoImpl;
 import ni.edu.uni.programacion2.proyectofinal.backend.pojo.Productos;
-import ni.edu.uni.programacion2.proyectofinal.panels.IngreProductos;
+import ni.edu.uni.programacion2.proyectofinal.frame.IngresarProd;
+
 
 /**
  *
  * @author LENOVO 17
  */
 public class IngProdController {
-    private IngreProductos ip;
+    private IngresarProd ip;
     private DefaultComboBoxModel cmbDepartamento;
     private DefaultComboBoxModel cmbCategoria;
     private String Departa[] = new String[]{"Cuidado del Hogar", "Alimentos", "Licores","Confiterias","Bebidas","Cuidado Personal"};
     private String categoria[] = new String[]{"Cereales", "Granos basicos", "Insecticidas","Jabones de baño","Jabones Ropa","vinos","Gaseosas","Chiverias"};
     private PropertyChangeSupport propertySupport;
     private Productos productosC;
+    private JsonProdDaoImpl jpdi;
+    private Gson gson;
 
-    public IngProdController(IngreProductos ip) {
+    public IngProdController(IngresarProd ip) {
         this.ip = ip;
         initComponent();
     }
@@ -44,16 +49,23 @@ public class IngProdController {
     }
 
     private void initComponent() {
+        
+       try{ 
+        jpdi = new JsonProdDaoImpl();
+        gson = new Gson();
+        propertySupport = new PropertyChangeSupport(this);
         cmbDepartamento=new DefaultComboBoxModel(Departa);
         ip.getCmbDepa().setModel(cmbDepartamento);
         cmbCategoria=new DefaultComboBoxModel(categoria);
-        ip.getCmbCate().setModel(cmbCategoria);
+        ip.getCmbCatego().setModel(cmbCategoria);
         
         
         ip.getBtnSave().addActionListener(((e) -> {
             btnSaveActionListener(e);
         }));
-        
+       }catch(FileNotFoundException ex) {
+            Logger.getLogger(IngProdController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     
@@ -65,7 +77,7 @@ public class IngProdController {
         Codigo=ip.getTxtCodigo().getText();
         Nombre=ip.getTxtProducto().getText();
         Departamento=ip.getCmbDepa().getSelectedItem().toString();
-        Categor=ip.getCmbCate().getSelectedItem().toString();
+        Categor=ip.getCmbCatego().getSelectedItem().toString();
         Dispo=Integer.parseInt(ip.getSpDispo().getModel().getValue().toString());
         precio=Float.parseFloat(ip.getSpPrecio().getModel().getValue().toString());
         
@@ -73,6 +85,7 @@ public class IngProdController {
         
         try {
             ProductValidation(p);
+            jpdi.create(p);
             propertySupport.firePropertyChange("Productos", productosC, p);
             JOptionPane.showMessageDialog(null, "Vehicle save sucessfully.",
                     "Saved message", JOptionPane.INFORMATION_MESSAGE);

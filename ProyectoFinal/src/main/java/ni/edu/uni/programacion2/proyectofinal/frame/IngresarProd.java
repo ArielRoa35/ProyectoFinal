@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ni.edu.uni.programacion2.proyectofinal.panels;
+package ni.edu.uni.programacion2.proyectofinal.frame;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,16 +15,23 @@ import ni.edu.uni.programacion2.proyectofinal.controllers.IngProdController;
  *
  * @author LENOVO 17
  */
-public class IngreProductos extends javax.swing.JPanel {
-    
-    private IngProdController prodController;
+public class IngresarProd extends javax.swing.JFrame {
+
+    private IngProdController ipc;
+    /**
+     * Creates new form IngresarProd
+     */
+    public IngresarProd() {
+        initComponents();
+        ipc=new IngProdController(this);
+    }
 
     public JButton getBtnSave() {
         return btnSave;
     }
 
-    public JComboBox<String> getCmbCate() {
-        return cmbCate;
+    public JComboBox<String> getCmbCatego() {
+        return cmbCatego;
     }
 
     public JComboBox<String> getCmbDepa() {
@@ -46,15 +53,8 @@ public class IngreProductos extends javax.swing.JPanel {
     public JTextField getTxtProducto() {
         return txtProducto;
     }
-
     
-    /**
-     * Creates new form IngreProductos
-     */
-    public IngreProductos() {
-        initComponents();
-        prodController=new IngProdController(this);
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,8 +66,9 @@ public class IngreProductos extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        btnSave = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -75,82 +76,93 @@ public class IngreProductos extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         cmbDepa = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        cmbCate = new javax.swing.JComboBox<>();
+        cmbCatego = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         spDispo = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         spPrecio = new javax.swing.JSpinner();
-        jPanel3 = new javax.swing.JPanel();
-        btnSave = new javax.swing.JButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Agregar Inventario");
+        setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        btnSave.setText("Save");
+        jPanel2.add(btnSave);
 
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_END);
+
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Codigo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel1, gridBagConstraints);
+        jPanel3.add(jLabel1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 206;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 4);
-        jPanel2.add(txtCodigo, gridBagConstraints);
+        gridBagConstraints.ipadx = 152;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel3.add(txtCodigo, gridBagConstraints);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Producto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel2, gridBagConstraints);
+        jPanel3.add(jLabel2, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(txtProducto, gridBagConstraints);
+        jPanel3.add(txtProducto, gridBagConstraints);
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Departamento:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel3, gridBagConstraints);
+        jPanel3.add(jLabel3, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(cmbDepa, gridBagConstraints);
+        jPanel3.add(cmbDepa, gridBagConstraints);
 
-        jLabel4.setText("Categoría:");
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Categoria:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel4, gridBagConstraints);
+        jPanel3.add(jLabel4, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(cmbCate, gridBagConstraints);
+        jPanel3.add(cmbCatego, gridBagConstraints);
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Disponible:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel5, gridBagConstraints);
+        jPanel3.add(jLabel5, gridBagConstraints);
 
         spDispo.setModel(new javax.swing.SpinnerNumberModel());
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -158,15 +170,16 @@ public class IngreProductos extends javax.swing.JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(spDispo, gridBagConstraints);
+        jPanel3.add(spDispo, gridBagConstraints);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Precio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(jLabel6, gridBagConstraints);
+        jPanel3.add(jLabel6, gridBagConstraints);
 
         spPrecio.setModel(new javax.swing.SpinnerNumberModel(0.0f, null, null, 1.0f));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -174,22 +187,52 @@ public class IngreProductos extends javax.swing.JPanel {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel2.add(spPrecio, gridBagConstraints);
+        jPanel3.add(spPrecio, gridBagConstraints);
 
-        jPanel1.add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
-        btnSave.setText("Save");
-        jPanel3.add(btnSave);
-
-        jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        setSize(new java.awt.Dimension(416, 339));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(IngresarProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(IngresarProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(IngresarProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(IngresarProd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new IngresarProd().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-    private javax.swing.JComboBox<String> cmbCate;
+    private javax.swing.JComboBox<String> cmbCatego;
     private javax.swing.JComboBox<String> cmbDepa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -197,7 +240,6 @@ public class IngreProductos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSpinner spDispo;
