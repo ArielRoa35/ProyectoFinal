@@ -24,7 +24,7 @@ public class JsonProdDaoImpl extends RandomTemplate implements ProductDao{
     private Gson gson;    
     
     public JsonProdDaoImpl() throws FileNotFoundException {
-        super(new File("vehicleJson.head"), new File("vehicleJson.dat"));        
+        super(new File("Productos.head"), new File("Productos.dat"));        
         gson = new Gson();
         
     }    
@@ -76,7 +76,7 @@ public class JsonProdDaoImpl extends RandomTemplate implements ProductDao{
     @Override
     public Collection<Productos> getAll() throws IOException {
         List<Productos> prod = new ArrayList<>();
-        Productos vehicle = null;
+        Productos p = null;
         
         getCustomRandom().getRafH().seek(0);
         int n = getCustomRandom().getRafH().readInt();        
@@ -93,9 +93,9 @@ public class JsonProdDaoImpl extends RandomTemplate implements ProductDao{
             
             long posD = 4 + (id - 1)*SIZE;
             getCustomRandom().getRafD().seek(posD);
-            vehicle = gson.fromJson(getCustomRandom().getRafD().readUTF(), Productos.class);
+            p = gson.fromJson(getCustomRandom().getRafD().readUTF(), Productos.class);
             
-            prod.add(vehicle);            
+            prod.add(p);            
         }
         
         return prod;

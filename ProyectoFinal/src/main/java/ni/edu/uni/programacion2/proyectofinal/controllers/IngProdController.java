@@ -87,7 +87,7 @@ public class IngProdController {
             ProductValidation(p);
             jpdi.create(p);
             propertySupport.firePropertyChange("Productos", productosC, p);
-            JOptionPane.showMessageDialog(null, "Vehicle save sucessfully.",
+            JOptionPane.showMessageDialog(null, "Product save sucessfully.",
                     "Saved message", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
             Logger.getLogger(IngProdController.class.getName()).log(Level.SEVERE, null, ex);
@@ -104,7 +104,7 @@ public class IngProdController {
         }
 
         if (ip.getTxtProducto().getText().isEmpty()||ip.getTxtProducto().getText().isBlank()) {
-            throw new Exception("StockNumber cannot be empty or blank.");
+            throw new Exception("Producto cannot be empty or blank.");
         }
     }
 }
