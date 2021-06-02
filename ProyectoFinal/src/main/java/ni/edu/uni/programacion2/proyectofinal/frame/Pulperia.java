@@ -43,6 +43,11 @@ public class Pulperia extends javax.swing.JFrame {
         getContentPane().add(btnAgrgarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, 70));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 80, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoFrame.png"))); // NOI18N
@@ -59,6 +64,13 @@ public class Pulperia extends javax.swing.JFrame {
         IngresarProd ingp=new IngresarProd();
         ingp.setVisible(true);
     }//GEN-LAST:event_btnAgrgarProdActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Inventario inv=new Inventario();
+        inv.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
