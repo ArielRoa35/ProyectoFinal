@@ -44,7 +44,9 @@ public class InventarioController {
     private void initComponent() {
         try{
             jsonProdDaoImpl=new JsonProdDaoImpl();
+            
             loadTable();
+            
         }catch(FileNotFoundException ex) {
             Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -57,7 +59,7 @@ public class InventarioController {
         tblviewmodel=new ProductosTableModel(productos, Headers);
         tblrowSorter=new TableRowSorter<>(tblviewmodel);
         
-        inventario.getJtblInvent().setModel(tblviewmodel);
-        inventario.getJtblInvent().setRowSorter(tblrowSorter);
+        inventario.getTblViewProduct().setModel(tblviewmodel);
+        inventario.getTblViewProduct().setRowSorter(tblrowSorter);
     }
 }

@@ -10,7 +10,7 @@ package ni.edu.uni.programacion2.proyectofinal.backend.pojo;
  * @author LENOVO 17
  */
 public class Productos {
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String departamento;
     private String categoria;
@@ -22,7 +22,7 @@ public class Productos {
     
     
 
-    public Productos(String codigo, String nombre, String departamento, String categoria, int disponible, float precio) {
+    public Productos(int codigo, String nombre, String departamento, String categoria, int disponible, float precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.departamento = departamento;
@@ -31,11 +31,11 @@ public class Productos {
         this.precio = precio;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

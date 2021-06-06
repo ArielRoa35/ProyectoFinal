@@ -70,11 +70,12 @@ public class IngProdController {
     }
     
     private void btnSaveActionListener(ActionEvent e){
-        String Codigo,Nombre,Departamento,Categor;
+        int Codigo;
+        String Nombre,Departamento,Categor;
         int Dispo;
         float precio;
         
-        Codigo=ip.getTxtCodigo().getText();
+        Codigo=Integer.parseInt(ip.getTxtCodigo().getText());
         Nombre=ip.getTxtProducto().getText();
         Departamento=ip.getCmbDepa().getSelectedItem().toString();
         Categor=ip.getCmbCatego().getSelectedItem().toString();

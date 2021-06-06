@@ -24,13 +24,16 @@ public class Inventario extends javax.swing.JFrame {
         controller=new InventarioController(this);
     }
 
-    public JTable getJtblInvent() {
-        return jtblInvent;
+    public JTable getTblViewProduct() {
+        return tblViewProduct;
     }
 
     public JTextField getTxtBuscador() {
         return txtBuscador;
     }
+
+   
+    
     
     
 
@@ -44,32 +47,37 @@ public class Inventario extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         txtBuscador = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtblInvent = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblViewProduct = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanel3.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setText("Buscar:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(jLabel1, gridBagConstraints);
+        jPanel4.setLayout(new java.awt.GridBagLayout());
+
+        jLabel2.setText("Buscar:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(txtBuscador, gridBagConstraints);
+        jPanel4.add(jLabel2, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 31;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 4, 3, 4);
+        jPanel4.add(txtBuscador, gridBagConstraints);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        jPanel3.add(jPanel4, java.awt.BorderLayout.PAGE_START);
 
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        jtblInvent.setModel(new javax.swing.table.DefaultTableModel(
+        tblViewProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -77,14 +85,19 @@ public class Inventario extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jtblInvent);
+        tblViewProduct.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jScrollPane2.setViewportView(tblViewProduct);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel2.add(jScrollPane1, gridBagConstraints);
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel5.add(jScrollPane2, gridBagConstraints);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+        jPanel3.add(jPanel5, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,11 +138,12 @@ public class Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jtblInvent;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblViewProduct;
     private javax.swing.JTextField txtBuscador;
     // End of variables declaration//GEN-END:variables
 }
