@@ -5,29 +5,30 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarProveedor;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarCatalogo;
 
 /**
  *
  * @author Ariel Roa
  */
-public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
+public class IFrmMostrarCatalogo extends javax.swing.JInternalFrame {
 
-    private PnlMostrarProveedor pnlMostrarProveedor;
+    private PnlMostrarCatalogo pnlMostrarCatalogo;
     /**
-     * Creates new form IfrmMostrarProveedor
+     * Creates new form IFrmMostrarCatalogo
      */
-    public IFrmMostrarProveedor() {
+    public IFrmMostrarCatalogo() {
         initComponents();
     }
 
-    public PnlMostrarProveedor getPnlMostrarProveedor() {
-        return pnlMostrarProveedor;
+    public PnlMostrarCatalogo getPnlMostrarCatalogo() {
+        return pnlMostrarCatalogo;
     }
 
-    public void setPnlMostrarProveedor(PnlMostrarProveedor pnlMostrarProveedor) {
-        this.pnlMostrarProveedor = pnlMostrarProveedor;
+    public void setPnlMostrarCatalogo(PnlMostrarCatalogo pnlMostrarCatalogo) {
+        this.pnlMostrarCatalogo = pnlMostrarCatalogo;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,11 +43,11 @@ public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Mostrar proveedores");
+        setTitle("Mostrar catálogo");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlMostrarProveedor = new PnlMostrarProveedor();
-        pnlContenido.add(pnlMostrarProveedor);
+        pnlMostrarCatalogo = new PnlMostrarCatalogo();
+        pnlContenido.add(pnlMostrarCatalogo);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
         pack();

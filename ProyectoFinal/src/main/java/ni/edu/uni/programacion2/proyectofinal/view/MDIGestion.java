@@ -5,8 +5,8 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import java.awt.BorderLayout;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 /**
  *
@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 public class MDIGestion extends javax.swing.JFrame {
 
     private IFrmMostrarProveedor iFrmMostrarProveedor;
+    private IFrmMostrarCatalogo iFrmMostrarCatalogo;
             
     /**
      * Creates new form FrmPrincipal
@@ -46,6 +47,7 @@ public class MDIGestion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de gestión inventario");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new java.awt.Dimension(800, 500));
 
         pnlBotones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -93,8 +95,12 @@ public class MDIGestion extends javax.swing.JFrame {
 
         btnCatalogo.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCatalogo.setText("Catálogo");
-        btnCatalogo.setEnabled(false);
         btnCatalogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCatalogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatalogoActionPerformed(evt);
+            }
+        });
         pnlBotones.add(btnCatalogo);
 
         getContentPane().add(pnlBotones, java.awt.BorderLayout.LINE_START);
@@ -117,7 +123,7 @@ public class MDIGestion extends javax.swing.JFrame {
         );
         dskContenidoLayout.setVerticalGroup(
             dskContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
+            .addGap(0, 394, Short.MAX_VALUE)
         );
 
         getContentPane().add(dskContenido, java.awt.BorderLayout.CENTER);
@@ -128,12 +134,22 @@ public class MDIGestion extends javax.swing.JFrame {
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
         if(iFrmMostrarProveedor == null){
             iFrmMostrarProveedor = new IFrmMostrarProveedor();
+            iFrmMostrarProveedor.getPnlMostrarProveedor().setDesktopComponent(dskContenido);
         }
         agregarComponente(iFrmMostrarProveedor);
     }//GEN-LAST:event_btnProveedorActionPerformed
 
+    private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed
+        if(iFrmMostrarCatalogo == null){
+            iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
+            iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(dskContenido);
+        }
+        agregarComponente(iFrmMostrarCatalogo);
+    }//GEN-LAST:event_btnCatalogoActionPerformed
+
     private void agregarComponente(JComponent component){
         dskContenido.removeAll();
+        dskContenido.repaint();
         dskContenido.add(component);
         component.setVisible(true);
     }

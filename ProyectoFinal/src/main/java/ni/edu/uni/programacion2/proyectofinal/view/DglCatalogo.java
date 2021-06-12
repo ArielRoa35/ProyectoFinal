@@ -5,19 +5,19 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlProveedor;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlCatalogo;
 
 /**
  *
  * @author Ariel Roa
  */
-public class DglProveedor extends javax.swing.JDialog {
+public class DglCatalogo extends javax.swing.JDialog {
 
-    private PnlProveedor pnlProveedor;
+    private PnlCatalogo pnlCatalogo;
     /**
-     * Creates new form DglProveedor
+     * Creates new form DglCatalogo
      */
-    public DglProveedor(java.awt.Frame parent, boolean modal) {
+    public DglCatalogo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -34,13 +34,11 @@ public class DglProveedor extends javax.swing.JDialog {
         pnlContenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Ingreso de proveedor");
-        setResizable(false);
-        setSize(new java.awt.Dimension(500, 200));
+        setTitle("Ingreso de catálogo");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlProveedor = new PnlProveedor();
-        pnlContenido.add(pnlProveedor);
+        pnlCatalogo = new PnlCatalogo();
+        pnlContenido.add(pnlCatalogo);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(466, 239));
@@ -64,20 +62,20 @@ public class DglProveedor extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DglProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DglCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DglProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DglCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DglProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DglCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DglProveedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DglCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                DglProveedor dialog = new DglProveedor(new javax.swing.JFrame(), true);
+                DglCatalogo dialog = new DglCatalogo(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

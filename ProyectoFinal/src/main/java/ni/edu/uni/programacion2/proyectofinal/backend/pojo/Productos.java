@@ -7,6 +7,7 @@ public class Productos {
     private int codigo; 
     private int codigoProveedor;
     private String nombre;
+    private String descripcion;
     private float precioCompra;
     private float precioVenta;
     private int cantidad;
@@ -15,10 +16,19 @@ public class Productos {
     public Productos() {
     }
 
-    public Productos(int codigo, int codigoProveedor, String nombre, float precioCompra, float precioVenta, int cantidad, Date fechaVencimiento) {
+    public Productos(int codigo, int codigoProveedor, String nombre, String descripcion, float precioCompra) {
         this.codigo = codigo;
         this.codigoProveedor = codigoProveedor;
         this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precioCompra = precioCompra;
+    }
+
+    public Productos(int codigo, int codigoProveedor, String nombre, String descripcion, float precioCompra, float precioVenta, int cantidad, Date fechaVencimiento) {
+        this.codigo = codigo;
+        this.codigoProveedor = codigoProveedor;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.cantidad = cantidad;
@@ -47,6 +57,14 @@ public class Productos {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public float getPrecioCompra() {
@@ -80,6 +98,4 @@ public class Productos {
     public void setFechaVencimiento(Date fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
-    
-    
 }

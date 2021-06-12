@@ -5,25 +5,26 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
-import javax.swing.JComponent;
 import javax.swing.JDesktopPane;
-import ni.edu.uni.programacion2.proyectofinal.view.DglProveedor;
-import ni.edu.uni.programacion2.proyectofinal.view.IFrmMostrarCatalogo;
+import ni.edu.uni.programacion2.proyectofinal.view.DglCatalogo;
 
 /**
  *
  * @author Ariel Roa
  */
-public class PnlMostrarProveedor extends javax.swing.JPanel {
+public class PnlMostrarCatalogo extends javax.swing.JPanel {
 
-    private DglProveedor dglProveedor;
-    private IFrmMostrarCatalogo iFrmMostrarCatalogo;
+    private DglCatalogo dglCatalogo;
     private JDesktopPane desktopComponent;
     /**
-     * Creates new form mostrarProveedor
+     * Creates new form PnlMostrarProductos
      */
-    public PnlMostrarProveedor() {
+    public PnlMostrarCatalogo() {
         initComponents();
+    }
+
+    public PnlMostrarCatalogo(JDesktopPane desktopComponent) {
+        this.desktopComponent = desktopComponent;
     }
 
     public JDesktopPane getDesktopComponent() {
@@ -45,23 +46,30 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblProveedor = new javax.swing.JTable();
+        cmbProveedor = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblProductos = new javax.swing.JTable();
         btnAgregar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btnMostrarCatalogo = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        tblProveedor.setModel(new javax.swing.table.DefaultTableModel(
+        cmbProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(cmbProveedor, gridBagConstraints);
+
+        tblProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -72,18 +80,17 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblProveedor);
+        jScrollPane2.setViewportView(tblProductos);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 10;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(jScrollPane1, gridBagConstraints);
+        jPanel1.add(jScrollPane2, gridBagConstraints);
 
         btnAgregar.setText("Agregar");
         btnAgregar.setMaximumSize(new java.awt.Dimension(110, 40));
@@ -95,12 +102,17 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(btnAgregar, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jSeparator1, gridBagConstraints);
 
         btnEditar.setText("Editar");
         btnEditar.setMaximumSize(new java.awt.Dimension(110, 40));
@@ -112,10 +124,9 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(btnEditar, gridBagConstraints);
 
@@ -124,43 +135,11 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnEliminar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnEliminar.setPreferredSize(new java.awt.Dimension(110, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(btnEliminar, gridBagConstraints);
-
-        jLabel1.setText("(Selecionar proveedor)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(jLabel1, gridBagConstraints);
-
-        btnMostrarCatalogo.setText("Mostrar catálogo");
-        btnMostrarCatalogo.setMaximumSize(new java.awt.Dimension(110, 90));
-        btnMostrarCatalogo.setMinimumSize(new java.awt.Dimension(110, 90));
-        btnMostrarCatalogo.setPreferredSize(new java.awt.Dimension(110, 90));
-        btnMostrarCatalogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarCatalogoActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(btnMostrarCatalogo, gridBagConstraints);
-
-        jLabel2.setText("(Seleccionar proveedor)");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(jLabel2, gridBagConstraints);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(110, 40));
@@ -172,68 +151,48 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(btnCancelar, gridBagConstraints);
+
+        jLabel1.setText("(Seleccionar producto)");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jSeparator1, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel1.add(jSeparator2, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        jPanel1.add(jLabel1, gridBagConstraints);
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        dglProveedor = new DglProveedor(null, true);
-        dglProveedor.setVisible(true);
+        dglCatalogo = new DglCatalogo(null, true);
+        dglCatalogo.setVisible(true);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        dglProveedor = new DglProveedor(null, true);
-        dglProveedor.setVisible(true);
+        dglCatalogo = new DglCatalogo(null, true);
+        dglCatalogo.setVisible(true);
     }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnMostrarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCatalogoActionPerformed
-        if(iFrmMostrarCatalogo == null){
-            iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
-            iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(desktopComponent);
-        }
-        agregarComponente(iFrmMostrarCatalogo);
-    }//GEN-LAST:event_btnMostrarCatalogoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         desktopComponent.removeAll();
         desktopComponent.repaint();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void agregarComponente(JComponent component){
-        desktopComponent.removeAll();
-        desktopComponent.repaint();
-        desktopComponent.add(component);
-        component.setVisible(true);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnMostrarCatalogo;
+    private javax.swing.JComboBox<String> cmbProveedor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable tblProveedor;
+    private javax.swing.JTable tblProductos;
     // End of variables declaration//GEN-END:variables
 }

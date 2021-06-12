@@ -13,6 +13,13 @@ public class Proveedor {
     public Proveedor() {
     }
 
+    public Proveedor(int codigo, String nombre, String telefono, String direccion) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.direccion = direccion;
+    }
+    
     public Proveedor(int codigo, String nombre, String telefono, String direccion, ArrayList<Productos> catalogo) {
         this.codigo = codigo;
         this.nombre = nombre;
