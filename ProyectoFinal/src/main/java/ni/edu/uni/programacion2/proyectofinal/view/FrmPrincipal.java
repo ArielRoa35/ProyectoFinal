@@ -27,81 +27,73 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlBotones = new javax.swing.JPanel();
         btnVender = new javax.swing.JButton();
         btnComprar = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
         btnFactura = new javax.swing.JButton();
         btnDevolucion = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
+        btnProveedor = new javax.swing.JButton();
         btnCatalogo = new javax.swing.JButton();
-        pnlContent = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        dskContenido = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de gestión inventario");
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.setLayout(new java.awt.GridLayout(0, 1));
+        pnlBotones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlBotones.setLayout(new java.awt.GridLayout(0, 1));
 
         btnVender.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnVender.setText("Vender");
         btnVender.setEnabled(false);
         btnVender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnVender);
+        pnlBotones.add(btnVender);
 
         btnComprar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnComprar.setText("Comprar");
         btnComprar.setEnabled(false);
         btnComprar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnComprar);
+        pnlBotones.add(btnComprar);
 
         btnInventario.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnInventario.setText("Inventario");
         btnInventario.setEnabled(false);
         btnInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnInventario);
+        pnlBotones.add(btnInventario);
 
         btnFactura.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnFactura.setText("Facturas");
         btnFactura.setEnabled(false);
         btnFactura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnFactura);
+        pnlBotones.add(btnFactura);
 
         btnDevolucion.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnDevolucion.setText("Devolución");
         btnDevolucion.setEnabled(false);
         btnDevolucion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnDevolucion);
+        pnlBotones.add(btnDevolucion);
 
-        btnRegistrar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        btnRegistrar.setText("Registrar proveedor");
-        btnRegistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnRegistrar);
+        btnProveedor.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
+        btnProveedor.setText("Proveedores");
+        btnProveedor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProveedorActionPerformed(evt);
+            }
+        });
+        pnlBotones.add(btnProveedor);
 
         btnCatalogo.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnCatalogo.setText("Catálogo");
         btnCatalogo.setEnabled(false);
         btnCatalogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(btnCatalogo);
+        pnlBotones.add(btnCatalogo);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_START);
-
-        pnlContent.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout pnlContentLayout = new javax.swing.GroupLayout(pnlContent);
-        pnlContent.setLayout(pnlContentLayout);
-        pnlContentLayout.setHorizontalGroup(
-            pnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
-        );
-        pnlContentLayout.setVerticalGroup(
-            pnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(pnlContent, java.awt.BorderLayout.CENTER);
+        getContentPane().add(pnlBotones, java.awt.BorderLayout.LINE_START);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -113,8 +105,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.NORTH);
 
+        javax.swing.GroupLayout dskContenidoLayout = new javax.swing.GroupLayout(dskContenido);
+        dskContenido.setLayout(dskContenidoLayout);
+        dskContenidoLayout.setHorizontalGroup(
+            dskContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 423, Short.MAX_VALUE)
+        );
+        dskContenidoLayout.setVerticalGroup(
+            dskContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 269, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(dskContenido, java.awt.BorderLayout.CENTER);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
+        IFrmMostrarProveedor iFrmMostrarProveedor = new IFrmMostrarProveedor();
+        
+        dskContenido.add(iFrmMostrarProveedor);
+        iFrmMostrarProveedor.setVisible(true);
+    }//GEN-LAST:event_btnProveedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,11 +169,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnDevolucion;
     private javax.swing.JButton btnFactura;
     private javax.swing.JButton btnInventario;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnProveedor;
     private javax.swing.JButton btnVender;
+    private javax.swing.JDesktopPane dskContenido;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel pnlContent;
+    private javax.swing.JPanel pnlBotones;
     // End of variables declaration//GEN-END:variables
 }
