@@ -5,12 +5,15 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
+import javax.swing.JDialog;
+
 /**
  *
  * @author Ariel Roa
  */
 public class PnlCatalogo extends javax.swing.JPanel {
 
+    private JDialog jDialog;
     /**
      * Creates new form PnlProducto
      */
@@ -18,6 +21,14 @@ public class PnlCatalogo extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JDialog getjDialog() {
+        return jDialog;
+    }
+
+    public void setjDialog(JDialog jDialog) {
+        this.jDialog = jDialog;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +58,11 @@ public class PnlCatalogo extends javax.swing.JPanel {
         jPanel1.add(btnAceptar);
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCancelar);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_END);
@@ -100,6 +116,10 @@ public class PnlCatalogo extends javax.swing.JPanel {
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.jDialog.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

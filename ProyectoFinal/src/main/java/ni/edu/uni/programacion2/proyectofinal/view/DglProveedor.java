@@ -40,6 +40,7 @@ public class DglProveedor extends javax.swing.JDialog {
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
         pnlProveedor = new PnlProveedor();
+        pnlProveedor.setjDialog(this);
         pnlContenido.add(pnlProveedor);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 

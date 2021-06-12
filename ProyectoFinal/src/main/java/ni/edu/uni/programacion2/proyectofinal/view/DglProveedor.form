@@ -31,7 +31,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="pnlContenido">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePre" type="java.lang.String" value="pnlProveedor = new PnlProveedor();&#xd;&#xa;pnlContenido.add(pnlProveedor);"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePre" type="java.lang.String" value="pnlProveedor = new PnlProveedor();&#xd;&#xa;pnlProveedor.setjDialog(this);&#xd;&#xa;pnlContenido.add(pnlProveedor);"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">

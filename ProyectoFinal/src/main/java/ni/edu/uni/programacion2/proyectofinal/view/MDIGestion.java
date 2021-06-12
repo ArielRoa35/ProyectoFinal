@@ -16,6 +16,7 @@ public class MDIGestion extends javax.swing.JFrame {
 
     private IFrmMostrarProveedor iFrmMostrarProveedor;
     private IFrmMostrarCatalogo iFrmMostrarCatalogo;
+    private IFrmComprar iFrmComprar;
             
     /**
      * Creates new form FrmPrincipal
@@ -61,8 +62,12 @@ public class MDIGestion extends javax.swing.JFrame {
 
         btnComprar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnComprar.setText("Comprar");
-        btnComprar.setEnabled(false);
         btnComprar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarActionPerformed(evt);
+            }
+        });
         pnlBotones.add(btnComprar);
 
         btnInventario.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
@@ -132,20 +137,28 @@ public class MDIGestion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
-        if(iFrmMostrarProveedor == null){
-            iFrmMostrarProveedor = new IFrmMostrarProveedor();
-            iFrmMostrarProveedor.getPnlMostrarProveedor().setDesktopComponent(dskContenido);
-        }
+
+        iFrmMostrarProveedor = new IFrmMostrarProveedor();
+        iFrmMostrarProveedor.getPnlMostrarProveedor().setDesktopComponent(dskContenido);
+        
         agregarComponente(iFrmMostrarProveedor);
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed
-        if(iFrmMostrarCatalogo == null){
-            iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
-            iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(dskContenido);
-        }
+
+        iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
+        iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(dskContenido);
+
         agregarComponente(iFrmMostrarCatalogo);
     }//GEN-LAST:event_btnCatalogoActionPerformed
+
+    private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+
+        iFrmComprar = new IFrmComprar();
+        iFrmComprar.getPnlComprar().setDesktopComponent(dskContenido);
+        
+        agregarComponente(iFrmComprar);
+    }//GEN-LAST:event_btnComprarActionPerformed
 
     private void agregarComponente(JComponent component){
         dskContenido.removeAll();

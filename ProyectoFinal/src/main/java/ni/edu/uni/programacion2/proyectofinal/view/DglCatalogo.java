@@ -38,6 +38,7 @@ public class DglCatalogo extends javax.swing.JDialog {
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
         pnlCatalogo = new PnlCatalogo();
+        pnlCatalogo.setjDialog(this);
         pnlContenido.add(pnlCatalogo);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
