@@ -5,12 +5,15 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
+import ni.edu.uni.programacion2.proyectofinal.view.DglProveedor;
+
 /**
  *
  * @author Ariel Roa
  */
 public class PnlMostrarProveedor extends javax.swing.JPanel {
 
+    private DglProveedor dglProveedor;
     /**
      * Creates new form mostrarProveedor
      */
@@ -71,6 +74,11 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnAgregar.setMaximumSize(new java.awt.Dimension(110, 40));
         btnAgregar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnAgregar.setPreferredSize(new java.awt.Dimension(110, 40));
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -82,6 +90,11 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnEditar.setMaximumSize(new java.awt.Dimension(110, 40));
         btnEditar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnEditar.setPreferredSize(new java.awt.Dimension(110, 40));
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -136,6 +149,16 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        dglProveedor = new DglProveedor(null, true);
+        dglProveedor.setVisible(true);
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        dglProveedor = new DglProveedor(null, true);
+        dglProveedor.setVisible(true);
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

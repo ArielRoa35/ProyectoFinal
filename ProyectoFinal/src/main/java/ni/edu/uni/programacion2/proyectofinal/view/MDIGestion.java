@@ -5,16 +5,21 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
+import java.awt.BorderLayout;
+import javax.swing.JComponent;
+
 /**
  *
  * @author Ariel Roa
  */
-public class FrmPrincipal extends javax.swing.JFrame {
+public class MDIGestion extends javax.swing.JFrame {
 
+    private IFrmMostrarProveedor iFrmMostrarProveedor;
+            
     /**
      * Creates new form FrmPrincipal
      */
-    public FrmPrincipal() {
+    public MDIGestion() {
         initComponents();
     }
 
@@ -42,7 +47,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de gestión inventario");
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
         pnlBotones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pnlBotones.setLayout(new java.awt.GridLayout(0, 1));
@@ -122,12 +126,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedorActionPerformed
-        IFrmMostrarProveedor iFrmMostrarProveedor = new IFrmMostrarProveedor();
-        
-        dskContenido.add(iFrmMostrarProveedor);
-        iFrmMostrarProveedor.setVisible(true);
+        if(iFrmMostrarProveedor == null){
+            iFrmMostrarProveedor = new IFrmMostrarProveedor();
+        }
+        agregarComponente(iFrmMostrarProveedor);
     }//GEN-LAST:event_btnProveedorActionPerformed
 
+    private void agregarComponente(JComponent component){
+        dskContenido.removeAll();
+        dskContenido.add(component);
+        component.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -145,20 +154,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDIGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDIGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDIGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MDIGestion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmPrincipal().setVisible(true);
+                new MDIGestion().setVisible(true);
             }
         });
     }
