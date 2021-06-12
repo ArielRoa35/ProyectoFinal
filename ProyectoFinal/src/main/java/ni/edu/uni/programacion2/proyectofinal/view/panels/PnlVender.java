@@ -6,19 +6,19 @@
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Ariel Roa
  */
-public class PnlComprar extends javax.swing.JPanel {
+public class PnlVender extends javax.swing.JPanel {
 
     private JDesktopPane desktopComponent;
-    
     /**
-     * Creates new form PnlComprar
+     * Creates new form PnlVender
      */
-    public PnlComprar() {
+    public PnlVender() {
         initComponents();
     }
 
@@ -29,7 +29,7 @@ public class PnlComprar extends javax.swing.JPanel {
     public void setDesktopComponent(JDesktopPane desktopComponent) {
         this.desktopComponent = desktopComponent;
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,34 +45,28 @@ public class PnlComprar extends javax.swing.JPanel {
         cmbBuscarProveedor = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         txtBuscarNombre = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCatalogo = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtProveedor = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        ftxtPrecioCompra = new javax.swing.JFormattedTextField();
+        spnCantidad = new javax.swing.JSpinner();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        ftxtCantidad = new javax.swing.JFormattedTextField();
-        jLabel7 = new javax.swing.JLabel();
-        ftxtPrecioVenta = new javax.swing.JFormattedTextField();
-        jLabel8 = new javax.swing.JLabel();
-        cmbDia = new javax.swing.JComboBox<>();
-        cmbMes = new javax.swing.JComboBox<>();
-        cmbAnno = new javax.swing.JComboBox<>();
-        rbtnNoEspecifica = new javax.swing.JRadioButton();
-        jPanel4 = new javax.swing.JPanel();
-        btnAceptar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCarritoCompra = new javax.swing.JTable();
+        btnFacturar = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
 
-        setMinimumSize(new java.awt.Dimension(600, 450));
-        setPreferredSize(new java.awt.Dimension(600, 450));
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
+        setLayout(new java.awt.GridLayout(0, 1));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setText("Buscar por proveedor:");
@@ -84,7 +78,7 @@ public class PnlComprar extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
@@ -92,24 +86,18 @@ public class PnlComprar extends javax.swing.JPanel {
 
         jLabel2.setText("Buscar por nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(jLabel2, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(txtBuscarNombre, gridBagConstraints);
-
-        add(jPanel1);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         tblCatalogo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,162 +113,161 @@ public class PnlComprar extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblCatalogo);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 0.1;
-        jPanel2.add(jScrollPane1, gridBagConstraints);
-
-        add(jPanel2);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.GridBagLayout());
-
-        jLabel3.setText("Nombre:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel3, gridBagConstraints);
+        jPanel1.add(jScrollPane1, gridBagConstraints);
 
-        txtNombre.setEditable(false);
+        jLabel3.setText("(Seleccionar producto)");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jLabel3, gridBagConstraints);
+
+        btnAgregar.setText("Agregar");
+        btnAgregar.setMaximumSize(new java.awt.Dimension(110, 40));
+        btnAgregar.setMinimumSize(new java.awt.Dimension(110, 40));
+        btnAgregar.setPreferredSize(new java.awt.Dimension(110, 40));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(txtNombre, gridBagConstraints);
+        jPanel1.add(btnAgregar, gridBagConstraints);
 
-        jLabel4.setText("Proveedor:");
+        jLabel4.setText("Cantidad:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(jLabel4, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel1.add(spnCantidad, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel4, gridBagConstraints);
-
-        txtProveedor.setEditable(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(txtProveedor, gridBagConstraints);
+        jPanel1.add(jSeparator1, gridBagConstraints);
 
-        jLabel5.setText("Precio_compra:");
+        add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        tblCarritoCompra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tblCarritoCompra);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridheight = 13;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.weighty = 0.2;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel5, gridBagConstraints);
+        jPanel2.add(jScrollPane2, gridBagConstraints);
 
-        ftxtPrecioCompra.setEditable(false);
+        btnFacturar.setText("Facturar");
+        btnFacturar.setMaximumSize(new java.awt.Dimension(110, 80));
+        btnFacturar.setMinimumSize(new java.awt.Dimension(110, 80));
+        btnFacturar.setPreferredSize(new java.awt.Dimension(110, 80));
+        btnFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(ftxtPrecioCompra, gridBagConstraints);
-
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(btnFacturar, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jSeparator1, gridBagConstraints);
+        jPanel2.add(jSeparator2, gridBagConstraints);
 
-        jLabel6.setText("Cantidad:");
+        jLabel5.setText("(Seleccionar producto)");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel6, gridBagConstraints);
+        jPanel2.add(jLabel5, gridBagConstraints);
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setMaximumSize(new java.awt.Dimension(110, 40));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(110, 40));
+        btnEliminar.setPreferredSize(new java.awt.Dimension(110, 40));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel2.add(btnEliminar, gridBagConstraints);
+
+        jLabel10.setText("Total:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(ftxtCantidad, gridBagConstraints);
+        jPanel2.add(jLabel10, gridBagConstraints);
 
-        jLabel7.setText("Precio_venta:");
+        lblTotal.setText("Esperando...");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel7, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(ftxtPrecioVenta, gridBagConstraints);
-
-        jLabel8.setText("Fecha_caducidad:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(jLabel8, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(cmbDia, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(cmbMes, gridBagConstraints);
-
-        cmbAnno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(cmbAnno, gridBagConstraints);
-
-        rbtnNoEspecifica.setText("No específica");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel3.add(rbtnNoEspecifica, gridBagConstraints);
-
-        add(jPanel3);
-
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
-
-        btnAceptar.setText("Aceptar");
-        jPanel4.add(btnAceptar);
+        jPanel2.add(lblTotal, gridBagConstraints);
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.setMaximumSize(new java.awt.Dimension(110, 40));
+        btnCancelar.setMinimumSize(new java.awt.Dimension(110, 40));
+        btnCancelar.setPreferredSize(new java.awt.Dimension(110, 40));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnCancelar);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        jPanel2.add(btnCancelar, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel2.add(jSeparator3, gridBagConstraints);
 
-        add(jPanel4);
+        add(jPanel2);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -288,35 +275,34 @@ public class PnlComprar extends javax.swing.JPanel {
         desktopComponent.repaint();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturarActionPerformed
+        JOptionPane.showConfirmDialog(desktopComponent, "¿Está seguro de querer facturar?", "Confirmación", JOptionPane.YES_NO_OPTION);
+    }//GEN-LAST:event_btnFacturarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JComboBox<String> cmbAnno;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnFacturar;
     private javax.swing.JComboBox<String> cmbBuscarProveedor;
-    private javax.swing.JComboBox<String> cmbDia;
-    private javax.swing.JComboBox<String> cmbMes;
-    private javax.swing.JFormattedTextField ftxtCantidad;
-    private javax.swing.JFormattedTextField ftxtPrecioCompra;
-    private javax.swing.JFormattedTextField ftxtPrecioVenta;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JRadioButton rbtnNoEspecifica;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JSpinner spnCantidad;
+    private javax.swing.JTable tblCarritoCompra;
     private javax.swing.JTable tblCatalogo;
     private javax.swing.JTextField txtBuscarNombre;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtProveedor;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,29 +5,30 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlComprar;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlVender;
 
 /**
  *
  * @author Ariel Roa
  */
-public class IFrmComprar extends javax.swing.JInternalFrame {
+public class IFrmVender extends javax.swing.JInternalFrame {
 
-    private PnlComprar pnlComprar;
+    private PnlVender pnlVender;
     /**
-     * Creates new form IFrmComprar
+     * Creates new form IFrmVender
      */
-    public IFrmComprar() {
+    public IFrmVender() {
         initComponents();
     }
 
-    public PnlComprar getPnlComprar() {
-        return pnlComprar;
+    public PnlVender getPnlVender() {
+        return pnlVender;
     }
 
-    public void setPnlComprar(PnlComprar pnlComprar) {
-        this.pnlComprar = pnlComprar;
+    public void setPnlVender(PnlVender pnlVender) {
+        this.pnlVender = pnlVender;
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,11 +43,10 @@ public class IFrmComprar extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Comprar");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlComprar = new PnlComprar();
-        pnlContenido.add(pnlComprar);
+        pnlVender = new PnlVender();
+        pnlContenido.add(pnlVender);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
         setBounds(0, 0, 800, 600);

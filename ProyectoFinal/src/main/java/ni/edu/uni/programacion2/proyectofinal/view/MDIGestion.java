@@ -17,6 +17,7 @@ public class MDIGestion extends javax.swing.JFrame {
     private IFrmMostrarProveedor iFrmMostrarProveedor;
     private IFrmMostrarCatalogo iFrmMostrarCatalogo;
     private IFrmComprar iFrmComprar;
+    private IFrmVender iFrmVender;
             
     /**
      * Creates new form FrmPrincipal
@@ -56,8 +57,12 @@ public class MDIGestion extends javax.swing.JFrame {
 
         btnVender.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnVender.setText("Vender");
-        btnVender.setEnabled(false);
         btnVender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderActionPerformed(evt);
+            }
+        });
         pnlBotones.add(btnVender);
 
         btnComprar.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
@@ -72,8 +77,12 @@ public class MDIGestion extends javax.swing.JFrame {
 
         btnInventario.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnInventario.setText("Inventario");
-        btnInventario.setEnabled(false);
         btnInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioActionPerformed(evt);
+            }
+        });
         pnlBotones.add(btnInventario);
 
         btnFactura.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
@@ -159,6 +168,17 @@ public class MDIGestion extends javax.swing.JFrame {
         
         agregarComponente(iFrmComprar);
     }//GEN-LAST:event_btnComprarActionPerformed
+
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        iFrmVender = new IFrmVender();
+        iFrmVender.getPnlVender().setDesktopComponent(dskContenido);
+        
+        agregarComponente(iFrmVender);
+    }//GEN-LAST:event_btnVenderActionPerformed
+
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void agregarComponente(JComponent component){
         dskContenido.removeAll();
