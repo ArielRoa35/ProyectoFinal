@@ -5,6 +5,7 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.controllers;
 
+import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
 import java.io.IOError;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.swing.table.TableRowSorter;
 import ni.edu.uni.programacion2.proyectofinal.backend.dao.implementation.JsonProdDaoImpl;
 import ni.edu.uni.programacion2.proyectofinal.backend.pojo.Productos;
 import ni.edu.uni.programacion2.proyectofinal.frame.Inventario;
+import ni.edu.uni.programacion2.proyectofinal.frame.Pulperia;
 import ni.edu.uni.programacion2.proyectofinal.models.ProductosTableModel;
 
 /**
@@ -47,6 +49,11 @@ public class InventarioController {
             
             loadTable();
             
+            inventario.getBtnVolver().addActionListener(((e) -> {
+            getBtnVolverActionListener(e);
+            
+        }));
+            
         }catch(FileNotFoundException ex) {
             Logger.getLogger(InventarioController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -62,4 +69,10 @@ public class InventarioController {
         inventario.getTblViewProduct().setModel(tblviewmodel);
         inventario.getTblViewProduct().setRowSorter(tblrowSorter);
     }
+    
+    private void getBtnVolverActionListener(ActionEvent e){
+            inventario.setVisible(false);
+            Pulperia pul=new Pulperia();
+            pul.setVisible(true);
+        }
 }

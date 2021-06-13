@@ -26,6 +26,11 @@ public class IngresarProd extends javax.swing.JFrame {
         ipc=new IngProdController(this);
     }
 
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+
+    
     public JButton getBtnSave() {
         return btnSave;
     }
@@ -68,6 +73,7 @@ public class IngresarProd extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
@@ -90,6 +96,9 @@ public class IngresarProd extends javax.swing.JFrame {
 
         btnSave.setText("Save");
         jPanel2.add(btnSave);
+
+        btnVolver.setText("Regresar");
+        jPanel2.add(btnVolver);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_END);
 
@@ -232,6 +241,7 @@ public class IngresarProd extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> cmbCatego;
     private javax.swing.JComboBox<String> cmbDepa;
     private javax.swing.JLabel jLabel1;

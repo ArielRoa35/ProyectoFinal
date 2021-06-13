@@ -5,6 +5,7 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.frame;
 
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import ni.edu.uni.programacion2.proyectofinal.controllers.InventarioController;
@@ -32,6 +33,12 @@ public class Inventario extends javax.swing.JFrame {
         return txtBuscador;
     }
 
+    public JButton getBtnVolver() {
+        return btnVolver;
+    }
+    
+    
+
    
     
     
@@ -51,6 +58,7 @@ public class Inventario extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtBuscador = new javax.swing.JTextField();
+        btnVolver = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblViewProduct = new javax.swing.JTable();
@@ -72,6 +80,15 @@ public class Inventario extends javax.swing.JFrame {
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 4, 3, 4);
         jPanel4.add(txtBuscador, gridBagConstraints);
+
+        btnVolver.setText("Volver");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 13, 0);
+        jPanel4.add(btnVolver, gridBagConstraints);
 
         jPanel3.add(jPanel4, java.awt.BorderLayout.PAGE_START);
 
@@ -138,6 +155,7 @@ public class Inventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

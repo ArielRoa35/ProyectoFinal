@@ -11,6 +11,8 @@ package ni.edu.uni.programacion2.proyectofinal.frame;
  */
 public class Pulperia extends javax.swing.JFrame {
 
+    
+    
     /**
      * Creates new form Pulperia
      */
@@ -27,66 +29,96 @@ public class Pulperia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAgrgarProd = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAgregarPro = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
+        btnProveedores = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAgrgarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarProd.png"))); // NOI18N
-        btnAgrgarProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgrgarProdActionPerformed(evt);
+        btnAgregarPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregP.png"))); // NOI18N
+        btnAgregarPro.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnAgregarProMouseMoved(evt);
             }
         });
-        getContentPane().add(btnAgrgarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, 70));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarProActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 80, 70));
+        getContentPane().add(btnAgregarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 110));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/proveedor.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
+        btnInventario.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnInventarioMouseMoved(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 80, 70));
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 120, 110));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoFrame.png"))); // NOI18N
+        btnProveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/prove.png"))); // NOI18N
+        btnProveedores.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                btnProveedoresMouseMoved(evt);
+            }
+        });
+        btnProveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProveedoresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 120, 110));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 430, 300));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 4, 840, 560));
 
-        setSize(new java.awt.Dimension(416, 339));
+        setSize(new java.awt.Dimension(862, 606));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgrgarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrgarProdActionPerformed
+    private void btnAgregarProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        IngresarProd ingp=new IngresarProd();
-        ingp.setVisible(true);
-    }//GEN-LAST:event_btnAgrgarProdActionPerformed
+        IngresarProd ing=new IngresarProd();
+        ing.setVisible(true);
+    }//GEN-LAST:event_btnAgregarProActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         Inventario inv=new Inventario();
         inv.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAgregarProMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarProMouseMoved
+        // TODO add your handling code here:
+        btnAgregarPro.setToolTipText("Agregar Productos al Inventario");
+    }//GEN-LAST:event_btnAgregarProMouseMoved
+
+    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         Proveedores pro=new Proveedores();
         pro.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnProveedoresActionPerformed
+
+    private void btnInventarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseMoved
+        // TODO add your handling code here:
+        btnInventario.setToolTipText("Ver Inventario de Productos");
+    }//GEN-LAST:event_btnInventarioMouseMoved
+
+    private void btnProveedoresMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseMoved
+        // TODO add your handling code here:
+        btnProveedores.setToolTipText("Ver e Ingresar Proveedores");
+    }//GEN-LAST:event_btnProveedoresMouseMoved
 
     /**
      * @param args the command line arguments
@@ -124,9 +156,9 @@ public class Pulperia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgrgarProd;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAgregarPro;
+    private javax.swing.JButton btnInventario;
+    private javax.swing.JButton btnProveedores;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

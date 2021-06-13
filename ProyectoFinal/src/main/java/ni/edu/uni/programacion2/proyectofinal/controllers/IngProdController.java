@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import ni.edu.uni.programacion2.proyectofinal.backend.dao.implementation.JsonProdDaoImpl;
 import ni.edu.uni.programacion2.proyectofinal.backend.pojo.Productos;
 import ni.edu.uni.programacion2.proyectofinal.frame.IngresarProd;
+import ni.edu.uni.programacion2.proyectofinal.frame.Pulperia;
 
 
 /**
@@ -62,6 +63,10 @@ public class IngProdController {
         
         ip.getBtnSave().addActionListener(((e) -> {
             btnSaveActionListener(e);
+        }));
+        ip.getBtnVolver().addActionListener(((e) -> {
+            getBtnVolverActionListener(e);
+            
         }));
        }catch(FileNotFoundException ex) {
             Logger.getLogger(IngProdController.class.getName()).log(Level.SEVERE, null, ex);
@@ -108,4 +113,10 @@ public class IngProdController {
             throw new Exception("Producto cannot be empty or blank.");
         }
     }
+    
+    private void getBtnVolverActionListener(ActionEvent e){
+            ip.setVisible(false);
+            Pulperia pul=new Pulperia();
+            pul.setVisible(true);
+        }
 }
