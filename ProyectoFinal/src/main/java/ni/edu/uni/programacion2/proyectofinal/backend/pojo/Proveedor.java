@@ -6,21 +6,21 @@ public class Proveedor {
  
     private int codigo;
     private String nombre;
-    private String telefono;
+    private int telefono;
     private String direccion;
     private ArrayList<Productos> catalogo;
 
     public Proveedor() {
     }
 
-    public Proveedor(int codigo, String nombre, String telefono, String direccion) {
+    public Proveedor(int telefono, int codigo, String nombre, String direccion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
     }
     
-    public Proveedor(int codigo, String nombre, String telefono, String direccion, ArrayList<Productos> catalogo) {
+    public Proveedor(int codigo, String nombre, int telefono, String direccion, ArrayList<Productos> catalogo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -44,11 +44,11 @@ public class Proveedor {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -66,5 +66,17 @@ public class Proveedor {
 
     public void setCatalogo(ArrayList<Productos> catalogo) {
         this.catalogo = catalogo;
+    }
+    
+    public Object[] asArray(){
+        Object[] obj = new Object[4];
+        
+        obj[0] = codigo;
+        obj[1] = nombre;
+        obj[2] = direccion;
+        obj[3] = telefono;
+        
+        
+        return obj;
     }
 }

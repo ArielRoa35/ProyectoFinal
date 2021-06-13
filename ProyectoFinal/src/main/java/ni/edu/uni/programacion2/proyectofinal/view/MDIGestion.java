@@ -7,6 +7,8 @@ package ni.edu.uni.programacion2.proyectofinal.view;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import ni.edu.uni.programacion2.proyectofinal.controllers.MostrarProveeController;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarProveedor;
 
 /**
  *
@@ -20,6 +22,8 @@ public class MDIGestion extends javax.swing.JFrame {
     private IFrmVender iFrmVender;
     private IFrmMostrarInventario iFrmMostrarInventario;
     private IFrmMostrarFactura iFrmMostrarFactura;
+    
+            
             
     /**
      * Creates new form FrmPrincipal
@@ -150,6 +154,8 @@ public class MDIGestion extends javax.swing.JFrame {
         iFrmMostrarProveedor.getPnlMostrarProveedor().setDesktopComponent(dskContenido);
         
         agregarComponente(iFrmMostrarProveedor);
+        
+        
     }//GEN-LAST:event_btnProveedorActionPerformed
 
     private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed

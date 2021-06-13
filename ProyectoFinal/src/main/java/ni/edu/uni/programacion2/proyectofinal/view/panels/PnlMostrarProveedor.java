@@ -5,8 +5,11 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JDesktopPane;
+import javax.swing.JTable;
+import ni.edu.uni.programacion2.proyectofinal.controllers.MostrarProveeController;
 import ni.edu.uni.programacion2.proyectofinal.view.DglProveedor;
 import ni.edu.uni.programacion2.proyectofinal.view.IFrmMostrarCatalogo;
 
@@ -19,11 +22,41 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
     private DglProveedor dglProveedor;
     private IFrmMostrarCatalogo iFrmMostrarCatalogo;
     private JDesktopPane desktopComponent;
+    private MostrarProveeController mpc;
+    private PnlProveedor pnlProveedor;
+    
+    
+    public JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnEditar() {
+        return btnEditar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public JButton getBtnMostrarCatalogo() {
+        return btnMostrarCatalogo;
+    }
+
     /**
      * Creates new form mostrarProveedor
      */
+    public JTable getTblProveedor() {
+        return tblProveedor;
+    }
+
     public PnlMostrarProveedor() {
         initComponents();
+        mpc=new MostrarProveeController(this);
+        
     }
 
     public JDesktopPane getDesktopComponent() {
@@ -63,13 +96,10 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
 
         tblProveedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tblProveedor);
@@ -195,6 +225,7 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         dglProveedor = new DglProveedor(null, true);
         dglProveedor.setVisible(true);
+        pnlProveedor=new PnlProveedor();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

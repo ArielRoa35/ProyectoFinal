@@ -5,7 +5,11 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
+import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
+import ni.edu.uni.programacion2.proyectofinal.controllers.IngProveedorController;
 
 /**
  *
@@ -13,13 +17,39 @@ import javax.swing.JDialog;
  */
 public class PnlProveedor extends javax.swing.JPanel {
 
+    private IngProveedorController ipc;
     private JDialog jDialog;
+    private PnlProveedor pnlProveedor;
     /**
      * Creates new form pnlProveedor
      */
     public PnlProveedor() {
         initComponents();
+        ipc=new IngProveedorController(this);
     }
+
+
+    public JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JFormattedTextField getFtxtTelefono() {
+        return ftxtTelefono;
+    }
+
+    public JTextField getTxtDirección() {
+        return txtDirección;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+    
+    
 
     public JDialog getjDialog() {
         return jDialog;
