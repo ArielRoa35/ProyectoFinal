@@ -91,19 +91,11 @@
               <Font name="Microsoft YaHei" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Facturas"/>
-            <Property name="enabled" type="boolean" value="false"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnDevolucion">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei" size="12" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Devoluci&#xf3;n"/>
-            <Property name="enabled" type="boolean" value="false"/>
-            <Property name="horizontalAlignment" type="int" value="2"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFacturaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnProveedor">
           <Properties>

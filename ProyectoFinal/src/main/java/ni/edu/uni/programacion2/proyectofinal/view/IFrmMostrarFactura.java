@@ -5,29 +5,30 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarProveedor;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarFactura;
 
 /**
  *
  * @author Ariel Roa
  */
-public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
+public class IFrmMostrarFactura extends javax.swing.JInternalFrame {
 
-    private PnlMostrarProveedor pnlMostrarProveedor;
+    private PnlMostrarFactura pnlMostrarFactura;
     /**
-     * Creates new form IfrmMostrarProveedor
+     * Creates new form IFrmMostrarFactura
      */
-    public IFrmMostrarProveedor() {
+    public IFrmMostrarFactura() {
         initComponents();
     }
 
-    public PnlMostrarProveedor getPnlMostrarProveedor() {
-        return pnlMostrarProveedor;
+    public PnlMostrarFactura getPnlMostrarFactura() {
+        return pnlMostrarFactura;
     }
 
-    public void setPnlMostrarProveedor(PnlMostrarProveedor pnlMostrarProveedor) {
-        this.pnlMostrarProveedor = pnlMostrarProveedor;
+    public void setPnlMostrarFactura(PnlMostrarFactura pnlMostrarFactura) {
+        this.pnlMostrarFactura = pnlMostrarFactura;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,14 +43,14 @@ public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Mostrar proveedor");
+        setTitle("Mostrar factura");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlMostrarProveedor = new PnlMostrarProveedor();
-        pnlContenido.add(pnlMostrarProveedor);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
+        pnlMostrarFactura = new PnlMostrarFactura();
+        pnlContenido.add(pnlMostrarFactura);
 
-        pack();
+        setBounds(0, 0, 610, 430);
     }// </editor-fold>//GEN-END:initComponents
 
 

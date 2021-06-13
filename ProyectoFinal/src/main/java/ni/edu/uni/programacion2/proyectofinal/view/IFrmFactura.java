@@ -5,29 +5,30 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarProveedor;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlFactura;
 
 /**
  *
  * @author Ariel Roa
  */
-public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
+public class IFrmFactura extends javax.swing.JInternalFrame {
 
-    private PnlMostrarProveedor pnlMostrarProveedor;
+    private PnlFactura pnlFactura;
     /**
-     * Creates new form IfrmMostrarProveedor
+     * Creates new form JFrmFactura
      */
-    public IFrmMostrarProveedor() {
+    public IFrmFactura() {
         initComponents();
     }
 
-    public PnlMostrarProveedor getPnlMostrarProveedor() {
-        return pnlMostrarProveedor;
+    public PnlFactura getPnlFactura() {
+        return pnlFactura;
     }
 
-    public void setPnlMostrarProveedor(PnlMostrarProveedor pnlMostrarProveedor) {
-        this.pnlMostrarProveedor = pnlMostrarProveedor;
+    public void setPnlFactura(PnlFactura pnlFactura) {
+        this.pnlFactura = pnlFactura;
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,14 +43,14 @@ public class IFrmMostrarProveedor extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Mostrar proveedor");
+        setTitle("Factura");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlMostrarProveedor = new PnlMostrarProveedor();
-        pnlContenido.add(pnlMostrarProveedor);
+        pnlFactura = new PnlFactura();
+        pnlContenido.add(pnlFactura);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
-        pack();
+        setBounds(0, 0, 610, 430);
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -19,6 +19,7 @@ public class MDIGestion extends javax.swing.JFrame {
     private IFrmComprar iFrmComprar;
     private IFrmVender iFrmVender;
     private IFrmMostrarInventario iFrmMostrarInventario;
+    private IFrmMostrarFactura iFrmMostrarFactura;
             
     /**
      * Creates new form FrmPrincipal
@@ -41,7 +42,6 @@ public class MDIGestion extends javax.swing.JFrame {
         btnComprar = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
         btnFactura = new javax.swing.JButton();
-        btnDevolucion = new javax.swing.JButton();
         btnProveedor = new javax.swing.JButton();
         btnCatalogo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -88,15 +88,13 @@ public class MDIGestion extends javax.swing.JFrame {
 
         btnFactura.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnFactura.setText("Facturas");
-        btnFactura.setEnabled(false);
         btnFactura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturaActionPerformed(evt);
+            }
+        });
         pnlBotones.add(btnFactura);
-
-        btnDevolucion.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-        btnDevolucion.setText("Devolución");
-        btnDevolucion.setEnabled(false);
-        btnDevolucion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        pnlBotones.add(btnDevolucion);
 
         btnProveedor.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         btnProveedor.setText("Proveedores");
@@ -184,6 +182,13 @@ public class MDIGestion extends javax.swing.JFrame {
         agregarComponente(iFrmMostrarInventario);
     }//GEN-LAST:event_btnInventarioActionPerformed
 
+    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        iFrmMostrarFactura = new IFrmMostrarFactura();
+        iFrmMostrarFactura.getPnlMostrarFactura().setDesktopComponent(dskContenido);
+        
+        agregarComponente(iFrmMostrarFactura);
+    }//GEN-LAST:event_btnFacturaActionPerformed
+
     private void agregarComponente(JComponent component){
         dskContenido.removeAll();
         dskContenido.repaint();
@@ -229,7 +234,6 @@ public class MDIGestion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCatalogo;
     private javax.swing.JButton btnComprar;
-    private javax.swing.JButton btnDevolucion;
     private javax.swing.JButton btnFactura;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnProveedor;

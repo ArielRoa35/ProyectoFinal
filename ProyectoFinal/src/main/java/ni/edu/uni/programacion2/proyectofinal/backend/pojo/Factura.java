@@ -8,18 +8,20 @@ public class Factura {
     private int codigo;
     private Date fecha;
     private ArrayList<Productos> productos;
-    private float subTotal;
     private float total;
+    private float pago;
+    private float vuelto;
 
     public Factura() {
     }
 
-    public Factura(int codigo, Date fecha, ArrayList<Productos> productos, float subTotal, float total) {
+    public Factura(int codigo, Date fecha, ArrayList<Productos> productos, float total, float pago, float vuelto) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.productos = productos;
-        this.subTotal = subTotal;
         this.total = total;
+        this.pago = pago;
+        this.vuelto = vuelto;
     }
 
     public int getCodigo() {
@@ -46,14 +48,6 @@ public class Factura {
         this.productos = productos;
     }
 
-    public float getSubTotal() {
-        return subTotal;
-    }
-
-    public void setSubTotal(float subTotal) {
-        this.subTotal = subTotal;
-    }
-
     public float getTotal() {
         return total;
     }
@@ -61,4 +55,22 @@ public class Factura {
     public void setTotal(float total) {
         this.total = total;
     }
+
+    public float getPago() {
+        return pago;
+    }
+
+    public void setPago(float pago) {
+        this.pago = pago;
+    }
+
+    public float getVuelto() {
+        return vuelto;
+    }
+
+    public void setVuelto(float vuelto) {
+        this.vuelto = vuelto;
+    }
+    
+    
 }

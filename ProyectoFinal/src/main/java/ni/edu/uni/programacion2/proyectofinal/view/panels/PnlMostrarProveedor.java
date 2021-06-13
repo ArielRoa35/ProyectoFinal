@@ -203,10 +203,9 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnMostrarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCatalogoActionPerformed
-        if(iFrmMostrarCatalogo == null){
-            iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
-            iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(desktopComponent);
-        }
+        iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
+        iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(desktopComponent);
+        
         agregarComponente(iFrmMostrarCatalogo);
     }//GEN-LAST:event_btnMostrarCatalogoActionPerformed
 
@@ -216,8 +215,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void agregarComponente(JComponent component){
-        desktopComponent.removeAll();
-        desktopComponent.repaint();
         desktopComponent.add(component);
         component.setVisible(true);
     }
