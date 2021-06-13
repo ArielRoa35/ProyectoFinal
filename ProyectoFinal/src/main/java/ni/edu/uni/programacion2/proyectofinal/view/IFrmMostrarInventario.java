@@ -5,30 +5,30 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
-import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlVender;
+import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlMostrarInventario;
 
 /**
  *
  * @author Ariel Roa
  */
-public class IFrmVender extends javax.swing.JInternalFrame {
+public class IFrmMostrarInventario extends javax.swing.JInternalFrame {
 
-    private PnlVender pnlVender;
+    private PnlMostrarInventario pnlMostrarInventario;
     /**
-     * Creates new form IFrmVender
+     * Creates new form JFrmMostrarInventario
      */
-    public IFrmVender() {
+    public IFrmMostrarInventario() {
         initComponents();
     }
 
-    public PnlVender getPnlVender() {
-        return pnlVender;
+    public PnlMostrarInventario getPnlMostrarInventario() {
+        return pnlMostrarInventario;
     }
 
-    public void setPnlVender(PnlVender pnlVender) {
-        this.pnlVender = pnlVender;
+    public void setPnlMostrarInventario(PnlMostrarInventario pnlMostrarInventario) {
+        this.pnlMostrarInventario = pnlMostrarInventario;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,11 +43,11 @@ public class IFrmVender extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Vender");
+        setTitle("Mostrar inventario");
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        pnlVender = new PnlVender();
-        pnlContenido.add(pnlVender);
+        pnlMostrarInventario = new PnlMostrarInventario();
+        pnlContenido.add(pnlMostrarInventario);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 
         setBounds(0, 0, 800, 600);

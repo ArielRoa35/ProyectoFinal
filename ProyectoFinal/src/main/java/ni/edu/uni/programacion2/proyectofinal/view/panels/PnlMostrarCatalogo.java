@@ -46,7 +46,7 @@ public class PnlMostrarCatalogo extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        cmbProveedor = new javax.swing.JComboBox<>();
+        cmbFiltrarProveedor = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblProductos = new javax.swing.JTable();
         btnAgregar = new javax.swing.JButton();
@@ -60,14 +60,14 @@ public class PnlMostrarCatalogo extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        cmbProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmbFiltrarProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(cmbProveedor, gridBagConstraints);
+        jPanel1.add(cmbFiltrarProveedor, gridBagConstraints);
 
         tblProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,7 +188,7 @@ public class PnlMostrarCatalogo extends javax.swing.JPanel {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JComboBox<String> cmbProveedor;
+    private javax.swing.JComboBox<String> cmbFiltrarProveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;

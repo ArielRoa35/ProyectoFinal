@@ -42,9 +42,9 @@ public class PnlVender extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cmbBuscarProveedor = new javax.swing.JComboBox<>();
+        cmbFiltrarProveedor = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txtBuscarNombre = new javax.swing.JTextField();
+        txtFiltrarNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCatalogo = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -69,7 +69,7 @@ public class PnlVender extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setText("Buscar por proveedor:");
+        jLabel1.setText("Filtrar por proveedor:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
@@ -82,9 +82,9 @@ public class PnlVender extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(cmbBuscarProveedor, gridBagConstraints);
+        jPanel1.add(cmbFiltrarProveedor, gridBagConstraints);
 
-        jLabel2.setText("Buscar por nombre:");
+        jLabel2.setText("Filtrar por nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -97,7 +97,7 @@ public class PnlVender extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(txtBuscarNombre, gridBagConstraints);
+        jPanel1.add(txtFiltrarNombre, gridBagConstraints);
 
         tblCatalogo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -285,7 +285,7 @@ public class PnlVender extends javax.swing.JPanel {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnFacturar;
-    private javax.swing.JComboBox<String> cmbBuscarProveedor;
+    private javax.swing.JComboBox<String> cmbFiltrarProveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -303,6 +303,6 @@ public class PnlVender extends javax.swing.JPanel {
     private javax.swing.JSpinner spnCantidad;
     private javax.swing.JTable tblCarritoCompra;
     private javax.swing.JTable tblCatalogo;
-    private javax.swing.JTextField txtBuscarNombre;
+    private javax.swing.JTextField txtFiltrarNombre;
     // End of variables declaration//GEN-END:variables
 }

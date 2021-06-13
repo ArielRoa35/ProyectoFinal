@@ -18,6 +18,7 @@ public class MDIGestion extends javax.swing.JFrame {
     private IFrmMostrarCatalogo iFrmMostrarCatalogo;
     private IFrmComprar iFrmComprar;
     private IFrmVender iFrmVender;
+    private IFrmMostrarInventario iFrmMostrarInventario;
             
     /**
      * Creates new form FrmPrincipal
@@ -177,7 +178,10 @@ public class MDIGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
-        // TODO add your handling code here:
+        iFrmMostrarInventario = new IFrmMostrarInventario();
+        iFrmMostrarInventario.getPnlMostrarInventario().setDesktopComponent(dskContenido);
+        
+        agregarComponente(iFrmMostrarInventario);
     }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void agregarComponente(JComponent component){

@@ -42,9 +42,9 @@ public class PnlComprar extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cmbBuscarProveedor = new javax.swing.JComboBox<>();
+        cmbFiltrarProveedor = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txtBuscarNombre = new javax.swing.JTextField();
+        txtFiltrarNombre = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCatalogo = new javax.swing.JTable();
@@ -75,7 +75,7 @@ public class PnlComprar extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setText("Buscar por proveedor:");
+        jLabel1.setText("Filtrar por proveedor:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
@@ -88,9 +88,9 @@ public class PnlComprar extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(cmbBuscarProveedor, gridBagConstraints);
+        jPanel1.add(cmbFiltrarProveedor, gridBagConstraints);
 
-        jLabel2.setText("Buscar por nombre:");
+        jLabel2.setText("Filtrar por nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -104,7 +104,7 @@ public class PnlComprar extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
-        jPanel1.add(txtBuscarNombre, gridBagConstraints);
+        jPanel1.add(txtFiltrarNombre, gridBagConstraints);
 
         add(jPanel1);
 
@@ -293,8 +293,8 @@ public class PnlComprar extends javax.swing.JPanel {
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JComboBox<String> cmbAnno;
-    private javax.swing.JComboBox<String> cmbBuscarProveedor;
     private javax.swing.JComboBox<String> cmbDia;
+    private javax.swing.JComboBox<String> cmbFiltrarProveedor;
     private javax.swing.JComboBox<String> cmbMes;
     private javax.swing.JFormattedTextField ftxtCantidad;
     private javax.swing.JFormattedTextField ftxtPrecioCompra;
@@ -315,7 +315,7 @@ public class PnlComprar extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton rbtnNoEspecifica;
     private javax.swing.JTable tblCatalogo;
-    private javax.swing.JTextField txtBuscarNombre;
+    private javax.swing.JTextField txtFiltrarNombre;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtProveedor;
     // End of variables declaration//GEN-END:variables
