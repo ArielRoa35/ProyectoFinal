@@ -24,7 +24,18 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
     private JDesktopPane desktopComponent;
     private MostrarProveeController mpc;
     private PnlProveedor pnlProveedor;
+
+
+    /**
+     * Creates new form mostrarProveedor
+     */
     
+    
+    public PnlMostrarProveedor() {
+        initComponents();
+        mpc=new MostrarProveeController(this);
+    }
+        
     
     public JButton getBtnAgregar() {
         return btnAgregar;
@@ -46,16 +57,8 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         return btnMostrarCatalogo;
     }
 
-    /**
-     * Creates new form mostrarProveedor
-     */
     public JTable getTblProveedor() {
         return tblProveedor;
-    }
-
-    public PnlMostrarProveedor() {
-        initComponents();
-        mpc=new MostrarProveeController(this);
         
     }
 

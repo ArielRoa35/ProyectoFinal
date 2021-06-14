@@ -71,10 +71,10 @@ public class Proveedor {
     public Object[] asArray(){
         Object[] obj = new Object[4];
         
-        obj[0] = codigo;
-        obj[1] = nombre;
-        obj[2] = direccion;
-        obj[3] = telefono;
+        obj[0] = telefono;
+        obj[1] = codigo;
+        obj[2] = nombre;
+        obj[3] = direccion;
         
         
         return obj;
