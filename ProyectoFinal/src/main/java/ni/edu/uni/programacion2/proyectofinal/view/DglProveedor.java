@@ -5,6 +5,7 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view;
 
+import ni.edu.uni.programacion2.proyectofinal.controllers.PnlMostrarProveedorController;
 import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlProveedor;
 
 /**
@@ -14,12 +15,25 @@ import ni.edu.uni.programacion2.proyectofinal.view.panels.PnlProveedor;
 public class DglProveedor extends javax.swing.JDialog {
 
     private PnlProveedor pnlProveedor;
+    private PnlMostrarProveedorController pnlMostrarProveedorController;
     /**
      * Creates new form DglProveedor
      */
     public DglProveedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }
+
+    public PnlProveedor getPnlProveedor() {
+        return pnlProveedor;
+    }
+    
+    public PnlMostrarProveedorController getPnlMostrarProveedorController() {
+        return pnlMostrarProveedorController;
+    }
+
+    public void setPnlMostrarProveedorController(PnlMostrarProveedorController pnlMostrarProveedorController) {
+        this.pnlMostrarProveedorController = pnlMostrarProveedorController;
     }
 
     /**
@@ -40,7 +54,7 @@ public class DglProveedor extends javax.swing.JDialog {
 
         pnlContenido.setLayout(new java.awt.BorderLayout());
         pnlProveedor = new PnlProveedor();
-        pnlProveedor.setjDialog(this);
+        pnlProveedor.setDglProveedor(this);
         pnlContenido.add(pnlProveedor);
         getContentPane().add(pnlContenido, java.awt.BorderLayout.CENTER);
 

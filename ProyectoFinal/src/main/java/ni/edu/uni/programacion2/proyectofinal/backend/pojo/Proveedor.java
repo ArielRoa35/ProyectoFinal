@@ -67,4 +67,16 @@ public class Proveedor {
     public void setCatalogo(ArrayList<Productos> catalogo) {
         this.catalogo = catalogo;
     }
+    
+    public Object[] asArray(){
+        
+        Object[] object = new Object[4];
+        
+        object[0] = codigo;
+        object[1] = nombre;
+        object[2] = telefono;
+        object[3] = direccion;
+        
+        return object;
+    }
 }

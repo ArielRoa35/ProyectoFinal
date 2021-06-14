@@ -5,10 +5,10 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
-import javax.swing.JComponent;
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
-import ni.edu.uni.programacion2.proyectofinal.view.DglProveedor;
-import ni.edu.uni.programacion2.proyectofinal.view.IFrmMostrarCatalogo;
+import javax.swing.JTable;
+import ni.edu.uni.programacion2.proyectofinal.controllers.PnlMostrarProveedorController;
 
 /**
  *
@@ -16,14 +16,14 @@ import ni.edu.uni.programacion2.proyectofinal.view.IFrmMostrarCatalogo;
  */
 public class PnlMostrarProveedor extends javax.swing.JPanel {
 
-    private DglProveedor dglProveedor;
-    private IFrmMostrarCatalogo iFrmMostrarCatalogo;
+    private PnlMostrarProveedorController pnlMostrarProveedorController;
     private JDesktopPane desktopComponent;
     /**
      * Creates new form mostrarProveedor
      */
     public PnlMostrarProveedor() {
         initComponents();
+        pnlMostrarProveedorController = new PnlMostrarProveedorController(this);
     }
 
     public JDesktopPane getDesktopComponent() {
@@ -32,6 +32,46 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
 
     public void setDesktopComponent(JDesktopPane desktopComponent) {
         this.desktopComponent = desktopComponent;
+    }
+    
+    public JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+    
+    public JButton getBtnEditar() {
+        return btnEditar;
+    }
+
+    public void setBtnEditar(JButton btnEditar) {
+        this.btnEditar = btnEditar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
+    }
+
+    public JButton getBtnMostrarCatalogo() {
+        return btnMostrarCatalogo;
+    }
+
+    public void setBtnMostrarCatalogo(JButton btnMostrarCatalogo) {
+        this.btnMostrarCatalogo = btnMostrarCatalogo;
+    }
+
+    public JTable getTblProveedor() {
+        return tblProveedor;
+    }
+
+    public void setTblProveedor(JTable tblProveedor) {
+        this.tblProveedor = tblProveedor;
     }
     
     /**
@@ -89,11 +129,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnAgregar.setMaximumSize(new java.awt.Dimension(110, 40));
         btnAgregar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnAgregar.setPreferredSize(new java.awt.Dimension(110, 40));
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -106,11 +141,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnEditar.setMaximumSize(new java.awt.Dimension(110, 40));
         btnEditar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnEditar.setPreferredSize(new java.awt.Dimension(110, 40));
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -142,11 +172,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnMostrarCatalogo.setMaximumSize(new java.awt.Dimension(110, 90));
         btnMostrarCatalogo.setMinimumSize(new java.awt.Dimension(110, 90));
         btnMostrarCatalogo.setPreferredSize(new java.awt.Dimension(110, 90));
-        btnMostrarCatalogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarCatalogoActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 7;
@@ -166,11 +191,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
         btnCancelar.setMaximumSize(new java.awt.Dimension(110, 40));
         btnCancelar.setMinimumSize(new java.awt.Dimension(110, 40));
         btnCancelar.setPreferredSize(new java.awt.Dimension(110, 40));
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 9;
@@ -191,33 +211,6 @@ public class PnlMostrarProveedor extends javax.swing.JPanel {
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        dglProveedor = new DglProveedor(null, true);
-        dglProveedor.setVisible(true);
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        dglProveedor = new DglProveedor(null, true);
-        dglProveedor.setVisible(true);
-    }//GEN-LAST:event_btnEditarActionPerformed
-
-    private void btnMostrarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCatalogoActionPerformed
-        iFrmMostrarCatalogo = new IFrmMostrarCatalogo();
-        iFrmMostrarCatalogo.getPnlMostrarCatalogo().setDesktopComponent(desktopComponent);
-        
-        agregarComponente(iFrmMostrarCatalogo);
-    }//GEN-LAST:event_btnMostrarCatalogoActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        desktopComponent.removeAll();
-        desktopComponent.repaint();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void agregarComponente(JComponent component){
-        desktopComponent.add(component);
-        component.setVisible(true);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;

@@ -176,6 +176,7 @@ public class MDIGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        
         iFrmMostrarInventario = new IFrmMostrarInventario();
         iFrmMostrarInventario.getPnlMostrarInventario().setDesktopComponent(dskContenido);
         
@@ -183,6 +184,7 @@ public class MDIGestion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        
         iFrmMostrarFactura = new IFrmMostrarFactura();
         iFrmMostrarFactura.getPnlMostrarFactura().setDesktopComponent(dskContenido);
         

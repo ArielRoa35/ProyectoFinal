@@ -5,7 +5,11 @@
  */
 package ni.edu.uni.programacion2.proyectofinal.view.panels;
 
-import javax.swing.JDialog;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
+import ni.edu.uni.programacion2.proyectofinal.controllers.PnlProveedorController;
+import ni.edu.uni.programacion2.proyectofinal.view.DglProveedor;
 
 /**
  *
@@ -13,22 +17,55 @@ import javax.swing.JDialog;
  */
 public class PnlProveedor extends javax.swing.JPanel {
 
-    private JDialog jDialog;
+    private PnlProveedorController pnlProveedorController;
+    private DglProveedor dglProveedor;
     /**
      * Creates new form pnlProveedor
      */
     public PnlProveedor() {
         initComponents();
+        pnlProveedorController = new PnlProveedorController(this);
     }
 
-    public JDialog getjDialog() {
-        return jDialog;
+    public DglProveedor getDglProveedor() {
+        return dglProveedor;
     }
 
-    public void setjDialog(JDialog jDialog) {
-        this.jDialog = jDialog;
+    public void setDglProveedor(DglProveedor dglProveedor) {
+        this.dglProveedor = dglProveedor;
     }
 
+    public JFormattedTextField getFtxtTelefono() {
+        return ftxtTelefono;
+    }
+
+    public void setFtxtTelefono(JFormattedTextField ftxtTelefono) {
+        this.ftxtTelefono = ftxtTelefono;
+    }
+
+    public JTextField getTxtDireccion() {
+        return txtDireccion;
+    }
+
+    public void setTxtDirección(JTextField txtDirección) {
+        this.txtDireccion = txtDirección;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+
+    public JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +86,7 @@ public class PnlProveedor extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         ftxtTelefono = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtDirección = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -59,11 +96,6 @@ public class PnlProveedor extends javax.swing.JPanel {
         jPanel1.add(btnAceptar);
 
         btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnCancelar);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_END);
@@ -91,6 +123,12 @@ public class PnlProveedor extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel2.add(jLabel2, gridBagConstraints);
+
+        try {
+            ftxtTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -113,15 +151,10 @@ public class PnlProveedor extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.2;
         gridBagConstraints.insets = new java.awt.Insets(8, 2, 8, 5);
-        jPanel2.add(txtDirección, gridBagConstraints);
+        jPanel2.add(txtDireccion, gridBagConstraints);
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.jDialog.dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
@@ -132,7 +165,7 @@ public class PnlProveedor extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtDirección;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
